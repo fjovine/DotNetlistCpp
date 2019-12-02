@@ -1,0 +1,15 @@
+<NotepadPlus>
+    <Project name="D">
+        <Folder name="src">
+            <File name="src\IBitmapAccessor.cpp" />
+            <File name="src\IBitmapAccessor.h" />
+        </Folder>
+        <Folder name="src_tst">
+            <File name="src_tst\MockupBitmapAccessor.cpp" />
+            <File name="src_tst\MockupBitmapAccessor.h" />
+            <File name="src_tst\MockupBitmapAccessorTest.cpp" />
+        </Folder>
+        <File name=".gitignore" />
+        <File name="README.md" />
+    </Project>
+</NotepadPlus>
