@@ -3,6 +3,9 @@
         <Folder name="src">
             <File name="src\IBitmapAccessor.cpp" />
             <File name="src\IBitmapAccessor.h" />
+            <File name="src\Scanline.h" />
+            <File name="src\Scanline.cpp" />
+            <File name="src\Segment.h" />
         </Folder>
         <Folder name="src_tst">
             <File name="src_tst\MockupBitmapAccessor.cpp" />
