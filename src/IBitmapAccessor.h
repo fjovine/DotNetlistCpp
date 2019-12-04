@@ -1,3 +1,5 @@
+#ifndef IBITMAPACCESSOR_H
+#define IBITMAPACCESSOR_H
 class IBitmapAccessor 
 {
 protected:
@@ -6,5 +8,8 @@ protected:
 public:
 	int get_width();
 	int get_height();
-	virtual bool pixel_at(int x, int y) = 0;
+	virtual bool pixel_at(int x, int y) {
+		throw "Unimplemented virtual method";
+	}
 };
+#endif

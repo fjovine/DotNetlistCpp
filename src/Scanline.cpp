@@ -29,14 +29,21 @@ ostream& operator<<(ostream& os, const Scanline& s)
 	return os << s.y << "-(" << s.initialIndex << "," << s.length << ")";
 }
 
-void Scanline::Foreach(vector<Segment> & segments, function<void(Segment &)> iterator) {
+void Scanline::Foreach(vector<Segment> & segments, function<void(const Segment)> iterator) {
 	for (int i=0; i<length; i++) {
 		iterator(segments[i+initialIndex]);
 	}
 }
 
-vector<Segment> Scanline::GetTouchingSegments(vector<Segment> & segments, Segment & segment) {
+vector<Segment> Scanline::GetTouchingSegments(vector<Segment> & segments, const Segment & segment) {
 	vector<Segment> result;
-	Foreach(segments, [](Segment & s) { if segment.Touches(s) { result.Add(s); } });
+
+	for (int i=0; i<length; i++) {
+		Segment s = segments[i+initialIndex];
+		if (segment.Touches(s)) {
+				result.push_back(s); 
+		}
+	}
+	
 	return result;
 }

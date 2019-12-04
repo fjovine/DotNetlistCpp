@@ -19,10 +19,11 @@ class Segment {
 		int getNetList();
 		void setNetList(int netlist);
 		
-		bool Touches(Segment * other);
+		bool Touches(const Segment & other) const;
 		bool ContainsAbscissa(float x);
 		friend ostream& operator<<(ostream& os, const Segment& s);
 		
 		Segment(int y, int ymin, int ymax);
+		Segment();
 };
 #endif

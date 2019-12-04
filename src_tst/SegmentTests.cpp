@@ -17,7 +17,7 @@ class SegmentTests
 
 void SegmentTests::Check(int Min, int Max, bool touches, string message) {
 	Segment other(0,Min,Max);
-	if (touches != segment.Touches(&other)) {
+	if (touches != segment.Touches(other)) {
 		cout << message << " -------\n";
 		assert(false);
 	}

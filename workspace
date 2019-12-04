@@ -7,6 +7,9 @@
             <File name="src\Scanline.cpp" />
             <File name="src\Segment.h" />
             <File name="src\Segment.cpp" />
+            <File name="src\BitmapScanner.h" />
+            <File name="src\build.sh" />
+            <File name="src\BitmapScanner.cpp" />
         </Folder>
         <Folder name="src_tst">
             <File name="src_tst\MockupBitmapAccessor.cpp" />

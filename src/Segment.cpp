@@ -34,17 +34,17 @@ void Segment::setNetList(int netlist)
 	netList = netlist;
 }
 
-bool Segment::Touches(Segment * other)
+bool Segment::Touches(const Segment & other) const
 {
-	if (y != other->y+1) {
+	if (y != other.y+1) {
 		return false;
 	}
 	
-	if (other->xMax < xMin) {
+	if (other.xMax < xMin) {
 		return false;
 	}
 	
-	if (other->xMin > xMax) {
+	if (other.xMin > xMax) {
 		return false;
 	}
 	
@@ -66,4 +66,7 @@ Segment::Segment(int y, int xmin, int xmax)
 	setY(y);
 	setXMin(xmin);
 	setXMax(xmax);
+}
+
+Segment::Segment() : Segment(0,0,0) {
 }

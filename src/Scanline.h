@@ -19,8 +19,8 @@ class Scanline
 		int getLength();
 		void setLength(int _length);
 		friend std::ostream& operator<<(std::ostream&, const Scanline&);
-		void Foreach(vector<Segment> & segments, function<void(Segment &)> iterator);
-		vector<Segment> GetTouchingSegments(vector<Segment> & segments, Segment & segment);
+		void Foreach(vector<Segment> & segments, function<void(const Segment)> iterator);
+		vector<Segment> GetTouchingSegments(vector<Segment> & segments, const Segment & segment);
 };
 
 #endif
