@@ -83,10 +83,3 @@ void MockupBitmapAccessorTest::MockupBitmapAccessor_WorksWell_AlternatingFullAnd
 	cout << __FUNCTION__ << " Ok" << endl;
 }
 
-int main(int argc, char ** argv)
-{
-	MockupBitmapAccessorTest test;
-	test.MockupBitmapAccessor_WorksWell_WithAllSet2x2bitmap();
-	test.MockupBitmapAccessor_WorksWell_WithOneBitSet1x1bitmap();
-	test.MockupBitmapAccessor_WorksWell_AlternatingFullAndVoidLines();
-}

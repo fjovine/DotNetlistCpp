@@ -1,6 +1,6 @@
 #ifndef MOCKUPBITMAPACCESSOR_H
 #define MOCKUPBITMAPACCESSOR_H
-#include "..\src\IBitmapAccessor.h"
+#include "../src/IBitmapAccessor.h"
 #include <string>
 #include <vector>
 using namespace std;

@@ -1,0 +1,5 @@
+Scanline.cpp: In lambda function:
+Scanline.cpp:40:41: error: expected ‘(’ before ‘segment’
+   40 |  Foreach(segments, [](Segment & s) { if segment.Touches(s) { result.Add(s); } });
+      |                                         ^~~~~~~
+      |                                         (

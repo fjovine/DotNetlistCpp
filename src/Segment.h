@@ -1,5 +1,7 @@
 #ifndef SEGMENT_H
 #define SEGMENT_H
+#include <iostream>
+
 using namespace std;
 class Segment {
 	private:
@@ -17,9 +19,10 @@ class Segment {
 		int getNetList();
 		void setNetList(int netlist);
 		
-		bool Touches(Segment other);
 		bool Touches(Segment * other);
 		bool ContainsAbscissa(float x);
-		friend ostream& operator<<(ostream&, const Segment&);
+		friend ostream& operator<<(ostream& os, const Segment& s);
+		
+		Segment(int y, int ymin, int ymax);
 };
 #endif

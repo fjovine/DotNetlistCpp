@@ -6,11 +6,15 @@
             <File name="src\Scanline.h" />
             <File name="src\Scanline.cpp" />
             <File name="src\Segment.h" />
+            <File name="src\Segment.cpp" />
         </Folder>
         <Folder name="src_tst">
             <File name="src_tst\MockupBitmapAccessor.cpp" />
             <File name="src_tst\MockupBitmapAccessor.h" />
             <File name="src_tst\MockupBitmapAccessorTest.cpp" />
+            <File name="src_tst\build.sh" />
+            <File name="src_tst\unit_tests.cpp" />
+            <File name="src_tst\SegmentTests.cpp" />
         </Folder>
         <File name=".gitignore" />
         <File name="README.md" />
