@@ -24,7 +24,7 @@ void Segment::setXMax( int xmax) {
 	xMax = xmax;
 }
 
-int Segment::getNetList()
+int Segment::getNetList() const
 {
 	return netList;
 }
@@ -58,10 +58,10 @@ bool Segment::ContainsAbscissa(float x)
 
 ostream& operator<<(ostream& os, const Segment& s)
 {
-	return os << s.y << "," << s.xMin << "-" << s.xMax << "," << s.netList;
+	return os << s.y << "," << s.xMin << "-" << s.xMax << " Netlist:" << s.netList;
 }
 
-Segment::Segment(int y, int xmin, int xmax)
+Segment::Segment(int y, int xmin, int xmax) : netList(0)
 {
 	setY(y);
 	setXMin(xmin);

@@ -1,2 +1,2 @@
 printf "\033c"
-g++ BitmapScanner.cpp Segment.cpp IBitmapAccessor.cpp && ./a.out
+g++ BitmapScanner.cpp Segment.cpp Scanline.cpp IBitmapAccessor.cpp DrillConnector.cpp && ./a.out

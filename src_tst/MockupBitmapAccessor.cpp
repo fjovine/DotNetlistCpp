@@ -1,4 +1,7 @@
 #include "MockupBitmapAccessor.h"
+#include <iostream>
+
+using namespace std;
 
 bool MockupBitmapAccessor::pixel_at(int x, int y)
 {

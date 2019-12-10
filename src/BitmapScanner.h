@@ -11,12 +11,13 @@ using namespace std;
 class BitmapScanner 
 {
 private:
-	IBitmapAccessor bitmap;
+	IBitmapAccessor * bitmap;
 	vector<Segment> segments;
 	vector<Scanline> scanlines;
 	map<int, vector<Segment>> netlists;
+	int find_scanline(int y);
 public:
-	BitmapScanner(IBitmapAccessor _bitmap);
+	BitmapScanner(IBitmapAccessor * _bitmap);
 	vector<Scanline> GetScanlineIndex();
 	vector<Segment> GetSegments();
 	vector<Segment> GetSegmentsOfNet(int netId);

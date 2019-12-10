@@ -12,15 +12,18 @@ class Scanline
 		int initialIndex;
 		int length;
 	public:
-		int getY();
+		int getY() const;
 		void setY(int _y);
-		int getInitialIndex();
+		int getInitialIndex() const;
 		void setInitialIndex(int _initialIndex);
-		int getLength();
+		int getLength() const;
+		void incLength();
 		void setLength(int _length);
 		friend std::ostream& operator<<(std::ostream&, const Scanline&);
-		void Foreach(vector<Segment> & segments, function<void(const Segment)> iterator);
+		void Foreach(vector<Segment> & segments, function<void(Segment &)> iterator);
 		vector<Segment> GetTouchingSegments(vector<Segment> & segments, const Segment & segment);
+		void BackPropagate(vector<Segment> & segments, int newNetlist, int oldNetlist) const;
+		Scanline(int _y, int _initialIndex);
 };
 
 #endif

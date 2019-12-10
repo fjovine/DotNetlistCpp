@@ -16,7 +16,7 @@ class Segment {
 		void setXMin(int xmin);
 		int getXMax();
 		void setXMax(int xmax);
-		int getNetList();
+		int getNetList() const;
 		void setNetList(int netlist);
 		
 		bool Touches(const Segment & other) const;

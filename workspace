@@ -1,23 +1,33 @@
 <NotepadPlus>
     <Project name="D">
         <Folder name="src">
-            <File name="src\IBitmapAccessor.cpp" />
+            <File name="src\BitmapScanner.h" />
+            <File name="src\BitmapScanner.cpp" />
+            <File name="src\DrillConnector.h" />
+            <File name="src\DrillConnector.cpp" />
+            <File name="src\DrillScanner.h" />
+            <File name="src\DrillScanner.cpp" />
             <File name="src\IBitmapAccessor.h" />
+            <File name="src\IBitmapAccessor.cpp" />
+            <File name="src\PointF.h" />
+            <File name="src\LayerNet.h" />
             <File name="src\Scanline.h" />
             <File name="src\Scanline.cpp" />
             <File name="src\Segment.h" />
             <File name="src\Segment.cpp" />
-            <File name="src\BitmapScanner.h" />
             <File name="src\build.sh" />
-            <File name="src\BitmapScanner.cpp" />
         </Folder>
         <Folder name="src_tst">
-            <File name="src_tst\MockupBitmapAccessor.cpp" />
-            <File name="src_tst\MockupBitmapAccessor.h" />
-            <File name="src_tst\MockupBitmapAccessorTest.cpp" />
-            <File name="src_tst\build.sh" />
             <File name="src_tst\unit_tests.cpp" />
+            <File name="src_tst\BitmapScannerTests.cpp" />
+            <File name="src_tst\DrillConnectorTests.cpp" />
+            <File name="src_tst\DrillScannerTest.cpp" />
+            <File name="src_tst\MockupBitmapAccessor.h" />
+            <File name="src_tst\MockupBitmapAccessor.cpp" />
+            <File name="src_tst\MockupBitmapAccessorTest.cpp" />
+            <File name="src_tst\ScanlineTests.cpp" />
             <File name="src_tst\SegmentTests.cpp" />
+            <File name="src_tst\build.sh" />
         </Folder>
         <File name=".gitignore" />
         <File name="README.md" />

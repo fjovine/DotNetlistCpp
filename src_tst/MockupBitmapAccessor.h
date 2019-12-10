@@ -9,7 +9,7 @@ class MockupBitmapAccessor : public IBitmapAccessor
 private:
 	vector<string> the_bitmap;
 public:
-	bool pixel_at(int x, int y);
+	virtual bool pixel_at(int x, int y);
 	MockupBitmapAccessor(vector<string> bitmap);
 };
 #endif

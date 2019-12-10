@@ -9,9 +9,9 @@ class MockupBitmapAccessorTest
 private:
 	void AssertAllSet(int width, int height, IBitmapAccessor * accessor);
 public:
-        void MockupBitmapAccessor_WorksWell_WithAllSet2x2bitmap();
-        void MockupBitmapAccessor_WorksWell_WithOneBitSet1x1bitmap();
-        void MockupBitmapAccessor_WorksWell_AlternatingFullAndVoidLines();
+	void MockupBitmapAccessor_WorksWell_WithAllSet2x2bitmap();
+	void MockupBitmapAccessor_WorksWell_WithOneBitSet1x1bitmap();
+	void MockupBitmapAccessor_WorksWell_AlternatingFullAndVoidLines();
 	MockupBitmapAccessorTest();
 };
 
@@ -40,7 +40,7 @@ void MockupBitmapAccessorTest::MockupBitmapAccessor_WorksWell_WithAllSet2x2bitma
 	
 	IBitmapAccessor * accessor = new MockupBitmapAccessor(test_bitmap);
 	AssertAllSet(2,2, accessor);
-	cout << __FUNCTION__ << " Ok" << endl;
+	SHOWUNITTEST;
 }
 
 void MockupBitmapAccessorTest::MockupBitmapAccessor_WorksWell_WithOneBitSet1x1bitmap()
@@ -51,7 +51,7 @@ void MockupBitmapAccessorTest::MockupBitmapAccessor_WorksWell_WithOneBitSet1x1bi
 	
 	IBitmapAccessor *accessor = new MockupBitmapAccessor(test_bitmap);
 	AssertAllSet(1,1, accessor);
-	cout << __FUNCTION__ << " Ok" << endl;
+	SHOWUNITTEST;
 }
 
 void MockupBitmapAccessorTest::MockupBitmapAccessor_WorksWell_AlternatingFullAndVoidLines()
@@ -80,6 +80,6 @@ void MockupBitmapAccessorTest::MockupBitmapAccessor_WorksWell_AlternatingFullAnd
 			}
 		}
 	}
-	cout << __FUNCTION__ << " Ok" << endl;
+	SHOWUNITTEST;
 }
 
