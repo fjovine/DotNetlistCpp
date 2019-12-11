@@ -88,6 +88,48 @@ cout << "Case1.1" << endl;
 	SHOWUNITTEST;
 }
 void DrillConnectorTest::ComputeGlobalNet_WorksWell_Case2() {
+	vector<string> top_bitmap {
+	//   012345678
+		"",
+		"  XX  XX",
+		"  XX  XX",
+		"  XX  XX",
+		"  XX  XX",
+		"  XX  XX",
+		"  XX  XX",
+		""
+	};
+cout << "Case1.1" << endl;
+	top = new MockupBitmapAccessor(top_bitmap);
+	vector<string> bottom_bitmap {
+	//   012345678
+		"",
+		"  XXXXXX",
+		"  XXXXXX",
+		"",
+		"",
+		"  XXXXXX",
+		"  XXXXXX",
+		""
+	};
+	bottom = new MockupBitmapAccessor(bottom_bitmap);
+	vector<string> drill_bitmap {
+	//   012345678
+		"",
+		"  XX",
+		"  XX",
+		"",
+		"",
+		"      XX",
+		"      XX",
+		""
+	};
+	drill = new MockupBitmapAccessor(drill_bitmap);
+	vector<string> check = {
+		"0:1,1:1",
+		"0:2,1:2"
+	};
+	CheckConnection(check);
 	SHOWUNITTEST;
 }
 
