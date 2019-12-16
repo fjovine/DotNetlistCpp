@@ -30,6 +30,7 @@ void BitmapScanner::PrepareAll() {
 }
 
 void BitmapScanner::Scan() {
+cout << "BitmapScanner enter" << endl;
 	Segment currentSegment;
 	bool isSegmentOpen = false;
 		
@@ -63,6 +64,7 @@ void BitmapScanner::Scan() {
 			scanlines.push_back(currentScanline);
 		}
 	}
+cout << "BitmapScanner exit" << endl;
 }
 
 void BitmapScanner::ComputeNetlists() {

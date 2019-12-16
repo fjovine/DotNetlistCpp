@@ -28,7 +28,6 @@ void DrillConnectorTest::CheckConnection(vector<string> & expected) {
 	int netCount = 0;
 	for (int key : nets) 
 	{
-		cout << "KEY: " << key << endl;
 		string sb;
 		for (auto layerNet : drillConnector.GetLayerNetsOfNet(key)) {
 			if (sb.size() > 0) {
@@ -36,11 +35,9 @@ void DrillConnectorTest::CheckConnection(vector<string> & expected) {
 			}
 			sb.append(layerNet.tostring());
 		}
-		cout << sb << endl;
 		assert(expected[netCount] == sb);
 		netCount ++;
 	}
-	cout << netCount << endl;
 	assert(expected.size() == netCount);
 }
 void DrillConnectorTest::ComputeGlobalNet_WorksWell_Case1() {
@@ -55,7 +52,6 @@ void DrillConnectorTest::ComputeGlobalNet_WorksWell_Case1() {
 		"  XX  XX",
 		""
 	};
-cout << "Case1.1" << endl;
 	top = new MockupBitmapAccessor(top_bitmap);
 	vector<string> bottom_bitmap {
 	//   012345678
@@ -99,7 +95,6 @@ void DrillConnectorTest::ComputeGlobalNet_WorksWell_Case2() {
 		"  XX  XX",
 		""
 	};
-cout << "Case1.1" << endl;
 	top = new MockupBitmapAccessor(top_bitmap);
 	vector<string> bottom_bitmap {
 	//   012345678

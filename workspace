@@ -1,6 +1,8 @@
 <NotepadPlus>
     <Project name="D">
         <Folder name="src">
+            <File name="src\main.cpp" />
+            <File name="src\AbstractBitmapGenerator.h" />
             <File name="src\BitmapScanner.h" />
             <File name="src\BitmapScanner.cpp" />
             <File name="src\DrillConnector.h" />
@@ -8,9 +10,13 @@
             <File name="src\DrillScanner.h" />
             <File name="src\DrillScanner.cpp" />
             <File name="src\IBitmapAccessor.h" />
-            <File name="src\IBitmapAccessor.cpp" />
-            <File name="src\PointF.h" />
             <File name="src\LayerNet.h" />
+            <File name="src\meminfo.cpp" />
+            <File name="src\MonochromeBitmapAccessor.h" />
+            <File name="src\MonochromeBitmapAccessor.cpp" />
+            <File name="src\PointF.h" />
+            <File name="src\RealBitmapGenerator.h" />
+            <File name="src\RealBitmapGenerator.cpp" />
             <File name="src\Scanline.h" />
             <File name="src\Scanline.cpp" />
             <File name="src\Segment.h" />
@@ -28,6 +34,13 @@
             <File name="src_tst\ScanlineTests.cpp" />
             <File name="src_tst\SegmentTests.cpp" />
             <File name="src_tst\build.sh" />
+        </Folder>
+        <Folder name="lodepng">
+            <File name="lodepng\example_encode.cpp" />
+            <File name="lodepng\example_decode.cpp" />
+            <File name="lodepng\lodepng.cpp" />
+            <File name="lodepng\lodepng.h" />
+            <File name="lodepng\testiovine.cpp" />
         </Folder>
         <File name=".gitignore" />
         <File name="README.md" />

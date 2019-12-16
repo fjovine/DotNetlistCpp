@@ -20,16 +20,7 @@ public:
 	inline friend ostream& operator<<(ostream & os, const LayerNet & l) {
 		return os << l.layerId << ":" << l.netId;
 	}
-//	inline bool operator<(const LayerNet & o) {
-//		if (layerId < o.layerId) {
-//			return true;
-//		}
-//		
-//		if (layerId == o.layerId) {
-//			return netId < o.netId;
-//		}
-//		return false;
-//	}
+
 	inline string tostring() {
 		return to_string(layerId).append(":").append(to_string(netId));
 	}
