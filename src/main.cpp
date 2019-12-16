@@ -14,6 +14,10 @@
 
 using namespace std;
 
+/**
+ * Creates a subfolder with the relative path.
+ * @param path of the folder to be created.
+ */
 void makedir(string path) {
 #ifdef __MINGW32__	
 	CreateDirectory(path.c_str(), NULL );
@@ -22,11 +26,21 @@ void makedir(string path) {
 #endif
 }
 
+/**
+ * Checks if the passed file exists.
+ * @param filename of the file to be verified.
+ * @return true if the passed file exists.
+ */
 bool file_exists(const string filename) {
 	ifstream infile(filename);
 	return infile.good();
 }
 
+/**
+ * Loads the PNG bitmap contained by the file filename and returns it inside a \ref "BitmapScanner" class.
+ * @param "filename" Filename of the PNG file.
+ * @return A \ref "BitmapScanner" object containing the loaded bitmap.
+ */
 BitmapScanner * LoadAndScan (const string filename) {
 	cout << "LoadAndScan (" << filename << ")" << endl;
 	MonochromeBitmapAccessor layer(filename);
@@ -35,11 +49,22 @@ BitmapScanner * LoadAndScan (const string filename) {
 	return result;
 }
 
+/**
+ * Gets the passed filename cutting of the file extension.
+ * @returns the processed filename.
+ */
 string GetFilenameWithoutExtension(const string & filename) {
 	size_t lastIndex = filename.find_last_of(".");
 	return filename.substr(0, lastIndex);
 }
 
+/**
+ * Generates the HTML file that permits showing each found net.
+ * @param path The pathname of the PNG file to be scanned.
+ * @param html list of lines composing the output HTML.
+ * @param optionValues The options of the net list box.
+ * @returns The list of HTML lines.
+ */
 void GenerateHtml(string path, vector<string> &html, vector<string> &optionValues) {
 	html.push_back("<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml/DTD/xhtml1 transitional.dtd\">");
 	html.push_back("<html xmlns=\"http://www.w3.org/1999/xhtml\">");
@@ -66,6 +91,12 @@ void GenerateHtml(string path, vector<string> &html, vector<string> &optionValue
 	html.push_back("</html>");
 }
 
+/**
+ * Generates the links to the external bitmaps in the HTML file.
+ * @param scanner The bitmap scanner to be used.
+ * @param path The pathname of the PNG file to be scanned.
+ * @param html A list of strings containing the HTML lines with the net lists.
+ */
 void GenerateNetLinks(BitmapScanner & scanner, string & path, vector<string> &html) {
 	for (int netId : scanner.GetNetIds()) {
 		string sline = to_string(netId);
@@ -74,6 +105,12 @@ void GenerateNetLinks(BitmapScanner & scanner, string & path, vector<string> &ht
 	}
 }
 
+/**
+ * Processes a single PNG file representing a copper layer.
+ * The nets, i.e. the areas in electrical contact are found, a bitmap with each net highlighted is generated as well
+ * as a HTML file to show them properly.
+ * @param "filename" Filename of the file containing the PNG image of the copper layer.
+ */
 void ProcessSingleLayer(const string & filename) {
 	if (! file_exists(filename)) {
 		cout << "File " << filename << " not found" << endl;
@@ -112,6 +149,17 @@ void ProcessSingleLayer(const string & filename) {
 	}
 }
 
+/**
+ * Loads and processes the PNG bitmaps containing the bitmaps representing the top, drill and bottom layers.
+ * It generates bitmaps containing the copper layers with each available net highlighted and an HTML file to easily
+ * show all the found nets.
+ * @param topLayerFilename Filename of the PNG file containing the top copper layer.
+ * @param drillLayerFilename Filename of the PNG file containing the drill layer.
+ * @param bottomLayerFilename Filename of the PNG file containing the bottom copper layer.
+ * @param path name of the project output. This is the name of the folder where bitmaps will be stored and the html will be path.HTML.
+ * @param doHoles True if holes should be drawn on copper layers.
+ * @param doMirror" True if the bottom layer should be mirrored in the output file produced.
+ */
 void ProcessDoubleLayerWithDrill(const string &topLayerFilename, const string &drillLayerFilename, const string &bottomLayerFilename, const string &path, bool doHoles, bool doMirror){
 	if (! file_exists(topLayerFilename)) {
 		cout << "The top layer file " << topLayerFilename << " was not found" << endl;
@@ -214,9 +262,18 @@ void ProcessDoubleLayerWithDrill(const string &topLayerFilename, const string &d
 	} else {
 		cout << "Unable to write :" << htmlFile << endl;
 	}
-	
 }
 
+/**
+ * Entry point of the application.
+ * It is a console application accepting the names of the PNG bitmap to be
+ * processed as parameters.
+ * The first PNG is the top layer, the second one is the drill layer while the third is the bottom layer.
+ * It generates a folder containing all the found networks found and an HTML file
+ * that graphically shows them.
+ * @param argc Count of the passed arguments
+ * @param argv command line arguments.
+ */
 int main (int argc, char * argv[]) {
 	if (argc == 2) {
 		ProcessSingleLayer(argv[1]);
